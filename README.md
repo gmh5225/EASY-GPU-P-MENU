@@ -23,3 +23,12 @@ You can find the original Repo at: https://github.com/jamesstringerparsec/Easy-G
 All Credits to @jamesstringerparsec
 
 ![beta1](https://user-images.githubusercontent.com/96527590/149619581-df924e1a-b753-477c-a17d-76af0ff2318c.JPG)
+
+## Restore VMGpuPartitionAdapter
+```batch
+Remove-VMGpuPartitionAdapter -VMName $yourvmname -ErrorAction SilentlyContinue
+```
+## Restore EnhancedSessionMode
+```batch
+Set-VMHost -EnableEnhancedSessionMode $True
+```
