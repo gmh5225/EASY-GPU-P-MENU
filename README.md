@@ -38,5 +38,9 @@ Set-VMProcessor -VMName $yourvmname -ExposeVirtualizationExtensions $true
 Set-VMProcessor -VMName $yourvmname -ExposeVirtualizationExtensions $false
 ```
 
+## Documents
+- https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/nested-virtualization
+
+
 ## About the slowdown of the Hyper-V virtual machine network
 The host computer is connected to the WIFI network. I tried to change the adapter option in the network and Internet to find the WLAN (this is if the name is not changed), right-click to open the properties, find the configuration under the network card name, select the advanced tab, find the preferred frequency band and change it to the preferred 5GHz/6Ghz frequency band. save.
