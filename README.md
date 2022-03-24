@@ -40,6 +40,7 @@ Set-VMProcessor -VMName $yourvmname -ExposeVirtualizationExtensions $false
 
 ## Documents
 - https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/nested-virtualization
+- https://github.com/HyperDbg/HyperDbg/issues/135
 
 
 ## About the slowdown of the Hyper-V virtual machine network
