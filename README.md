@@ -55,7 +55,12 @@ Set-VM -HighMemoryMappedIoSpace 32GB –VMName $vm
 ## Dll Migration
 On your host machine, go to `C:\Windows\System32\DriverStore\FileRepository\`
 and copy the `nv_dispi.inf_amd64` folder to `C:\Windows\System32\HostDriverStore\FileRepository\` on your VM (This folder will not exist, so make sure to create it)
-Next you will need to copy `C:\Windows\System32\nvapi64.dll` file from your host to `C:\Windows\System32\` on your VM
+Next you will need to copy 
+
+`C:\Windows\System32\nvapi64.dll` file from your host to `C:\Windows\System32\` on your VM
+
+`C:\Windows\SysWow64\nvapi.dll` file from your host to `C:\Windows\SysWow64\` on your VM
+
 And once that is done, you can restart the VM.
 
 ## About the slowdown of the Hyper-V virtual machine network
