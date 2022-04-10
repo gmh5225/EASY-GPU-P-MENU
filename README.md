@@ -42,6 +42,16 @@ Set-VMProcessor -VMName $yourvmname -ExposeVirtualizationExtensions $false
 - https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/nested-virtualization
 - https://github.com/HyperDbg/HyperDbg/issues/135
 
+## Manual Setting
+```
+$vm = "vm-name"
+Add-VMGpuPartitionAdapter -VMName $vm
+Set-VMGpuPartitionAdapter -VMName $vm -MinPartitionVRAM 80000000 -MaxPartitionVRAM 100000000 -OptimalPartitionVRAM 100000000 -MinPartitionEncode 80000000 -MaxPartitionEncode 100000000 -OptimalPartitionEncode 100000000 -MinPartitionDecode 80000000 -MaxPartitionDecode 100000000 -OptimalPartitionDecode 100000000 -MinPartitionCompute 80000000 -MaxPartitionCompute 100000000 -OptimalPartitionCompute 100000000
+
+Set-VM -GuestControlledCacheTypes $true -VMName $vm
+Set-VM -LowMemoryMappedIoSpace 1Gb -VMName $vm
+Set-VM –HighMemoryMappedIoSpace 32GB –VMName $vm
+```
 
 ## About the slowdown of the Hyper-V virtual machine network
 The host computer is connected to the WIFI network. I tried to change the adapter option in the network and Internet to find the WLAN (this is if the name is not changed), right-click to open the properties, find the configuration under the network card name, select the advanced tab, find the preferred frequency band and change it to the preferred 5GHz/6Ghz frequency band. save.
